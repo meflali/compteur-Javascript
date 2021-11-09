@@ -9,7 +9,7 @@ let count = 0;
 boutons.forEach(function (btn){
     // capture de l'evenement au clic
     btn.addEventListener("click", function (e){
-
+        
         let style = e.currentTarget;
 
         if (style.id === "add"){
@@ -18,6 +18,14 @@ boutons.forEach(function (btn){
             count--;
         }else {
            count = 0;
+        }
+        
+        if (count > 0) {
+            value.style.color = "green";
+        } else if (count < 0) {
+            value.style.color = "red";
+        } else{
+            value.style.color = "black";
         }
         value.innerHTML = count
     })
